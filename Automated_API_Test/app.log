@@ -1,0 +1,14 @@
+root - INFO - 2025-09-18 21:19:27,362- app.py- Application started
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,368- connectionpool.py- Starting new HTTPS connection (1): dummyjson.com:443
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,521- connectionpool.py- https://dummyjson.com:443 "GET /products HTTP/1.1" 200 None
+root - DEBUG - 2025-09-18 21:19:27,523- app.py- Status of List products is OK
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,524- connectionpool.py- Starting new HTTPS connection (1): dummyjson.com:443
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,590- connectionpool.py- https://dummyjson.com:443 "GET /products/1 HTTP/1.1" 200 None
+root - DEBUG - 2025-09-18 21:19:27,592- app.py- Status of Get single product by id is OK
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,593- connectionpool.py- Starting new HTTPS connection (1): dummyjson.com:443
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,757- connectionpool.py- https://dummyjson.com:443 "GET /products/search?q=phone HTTP/1.1" 200 None
+root - DEBUG - 2025-09-18 21:19:27,761- app.py- Status of Search products by query is OK
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,763- connectionpool.py- Starting new HTTPS connection (1): dummyjson.com:443
+urllib3.connectionpool - DEBUG - 2025-09-18 21:19:27,923- connectionpool.py- https://dummyjson.com:443 "GET /products/category/smartphones HTTP/1.1" 200 None
+root - DEBUG - 2025-09-18 21:19:27,927- app.py- Status of Get products in a category is OK
+root - INFO - 2025-09-18 21:19:27,927- app.py- Application closed
