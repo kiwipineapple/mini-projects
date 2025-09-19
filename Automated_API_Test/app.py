@@ -1,8 +1,12 @@
-import requests
-import logging
-import os
-from pathlib import Path
 from read_json import read_json
+from pathlib import Path
+import os
+import logging
+import requests
+__autor__ = 'Tong'
+__time__ = "2025-09-18"
+__doc__ = 'Test liveness of API Endpoints'
+
 
 os.chdir(Path(__file__).parent)
 
@@ -12,8 +16,12 @@ logging.basicConfig(filename="app.log", level=logging.DEBUG,
 
 
 def get_API_status(url):
-    response = requests.get(url)
-    # data = response.json()
+    "Get Endpoints liveness"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        print(f'Request failed. Error is {e}')
 
     print("Response Code:", response.status_code)
 
@@ -24,8 +32,7 @@ def get_API_status(url):
 
 
 def main():
-    logging.info("Application started")
-
+    "Show liveness of each Endpoint"
     data = read_json()
     for item in data:
         url = item['URL']
@@ -34,8 +41,8 @@ def main():
 
         logging.debug(f"Status of {name} is {status}")
 
-    logging.info("Application closed")
-
 
 if __name__ == "__main__":
+    logging.info("Application started")
     main()
+    logging.info("Application closed")
