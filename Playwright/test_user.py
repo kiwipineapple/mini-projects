@@ -8,7 +8,8 @@ os.chdir(Path(__file__).parent)
 def check_osapiens_web():
     with sync_playwright() as p:
         try:
-            browser = p.firefox.launch(headless=False)
+            # browser = p.firefox.launch(headless=False)
+            browser = p.chromium.launch(headless=True)
 
             page = browser.new_page()
 
@@ -28,6 +29,7 @@ def check_osapiens_web():
                 if "Quality" in title_text:
                     found = True
                     break
+            print(f'job title contains Quality is {found}')
 
             assert found, "No job title contains 'Quality'"
 
